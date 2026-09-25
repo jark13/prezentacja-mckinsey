@@ -2,6 +2,8 @@
 
 Builds a McKinsey-style scientific PowerPoint (`.pptx`) from the files in the folder you are working in: conclusion-led action titles, at most three topics per slide, methodology and statistics in a small footnote, fully labelled charts, English speaker notes on every slide (notes pane only), framing tuned to the aims & scope of the target journal or audience, and a ReAct self-review (number grounding against the sources + rendered visual QA) before the file is saved.
 
+**Website:** [prezentacja-mckinsey.vercel.app](https://prezentacja-mckinsey.vercel.app) — an example slide, what every slide gets, and install commands.
+
 > **Szybki start (PL):** zainstaluj Claude Code, sklonuj to repo do `~/.claude/skills/prezentacja-mckinsey`, uruchom ponownie Claude Code, przejdź do folderu ze swoimi materiałami (manuskrypt, rysunki, dane), wpisz `claude`, a potem np. *„Zbuduj prezentację z plików w tym folderze”*. Skill zada kilka pytań, pokaże storyboard do akceptacji i zapisze gotowy plik `.pptx` w Twoim folderze.
 
 ## Prerequisites
