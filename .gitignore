@@ -1,0 +1,17 @@
+__pycache__/
+*.pyc
+
+# Never commit user material or build output into the skill repository
+*.pptx
+*.docx
+*.xlsx
+*.pdf
+*.png
+*.jpg
+*.emf
+*.wmf
+deck-work/
+extract/
+render/
+node_modules/
+.env

@@ -1,0 +1,39 @@
+{
+  "skill_name": "prezentacja-mckinsey",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "Zbuduj mi prezentację z plików w tym folderze na konferencję. 10 minut, czasopismo: <target journal>. Zakreślenia kolorem w manuskrypcie to ślady redakcji, nie akcentuj ich.",
+      "expected_output": "A 16:9 .pptx of ~10-12 slides, McKinsey-style action titles, max 3 topics per slide, English B2 speaker notes on every slide (~1250 words total), all numbers grounded in the confirmed content sources, framing aligned with the journal's aims & scope, review log documenting ReAct cycles.",
+      "files": ["<path to a test folder with a manuscript, figures and author guidelines>"],
+      "assertions": [
+        "Final .pptx saved in the user's folder without overwriting an existing file",
+        "Slide count fits 10 min (10-12 slides)",
+        "Every slide has English speaker notes",
+        "No slide exceeds 3 topics (audit_deck)",
+        "Zero numbers on slides/notes missing from sources (audit_deck)",
+        "Notes total ~10 min of speech (1060-1440 words)",
+        "Every content slide has an action title (full-sentence takeaway)",
+        "journal-brief.md cites the journal's aims & scope with the URL read",
+        "review-log.md documents at least one Thought/Action/Observation cycle",
+        "No other file in the user's folder was modified",
+        "Every chart axis has a title with quantity and unit; every chart/figure slide has a source note (audit_deck)",
+        "Statistical/methodological detail appears only in MethodNote footnotes, not in the main slide area",
+        "Action titles are active-voice result statements, none are topic labels",
+        "Speaker notes present on title and closing slides as well, only in the notes pane"
+      ]
+    },
+    {
+      "id": 2,
+      "prompt": "Zrób prezentację na 12 minut z materiałów w tym folderze.",
+      "expected_output": "The skill asks (in one AskUserQuestion round) for the items still missing: the target journal or audience community, source confirmation, and the role of files in any non-empty subfolder; after the answer it fetches the named journal's aims & scope page and records its URL in journal-brief.md.",
+      "files": [],
+      "assertions": [
+        "User is asked which journal or audience community the talk is for",
+        "If non-empty subfolders exist, user is asked what their files mean",
+        "journal-brief.md contains the URL of the journal's aims & scope page that was actually fetched",
+        "Deck framing (executive summary, So-what bars) uses the journal's scope vocabulary"
+      ]
+    }
+  ]
+}
